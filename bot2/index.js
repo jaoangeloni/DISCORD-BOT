@@ -22,22 +22,23 @@ const client = new Client({
 client.on('messageCreate', async (message) => {
     const canal = message.guild.channels.cache.get(canalID);
 
-    if (message.author.bot) {
-        if (message.content.startsWith(prefix)) {
-            const msg = message.content.slice(prefix.length).toLowerCase().split(' ');
+    if (message.content.startsWith(prefix)) {
+        const msg = message.content.slice(prefix.length).toLowerCase().split(' ');
 
-            try {
-                const resposta = await obterRespostaDoGPT(msg);
+        try {
+            const resposta = await obterRespostaDoGPT(msg);
 
-                canal.send(`${resposta}`);
+            setTimeout(() => {
+                canal.send(`e.${resposta}`);
+            }, 15000)
 
-            } catch (erro) {
-                console.error('Erro:', erro);
+        } catch (erro) {
+            console.error('Erro:', erro);
 
-                canal.send('Ocorreu um erro ao processar a mensagem.');
-            }
+            canal.send('Ocorreu um erro ao processar a mensagem.');
         }
     }
+
 });
 
 client.on('ready', () => {

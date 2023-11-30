@@ -9,8 +9,8 @@ async function obterRespostaDoGPT(mensagem) {
         const resposta = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',
             messages: [
-                { role: 'system', content: 'Seu nome é Defa você é um cara muito estressado e nervoso, xinga tudo e todos, odeia brincadeirinhas com seu nome e quer matar cada ser que existe, você adora jogos e entende tudo sobre calculos e contas e coisas de nerd, sabe tudo sobre a cultura pop e adora se divertir. Escreva com um limite de 25 palavras.' },
-                { role: 'user', content: + mensagem.join(' ') }
+                { role: 'system', content: 'Seu nome é defa e você é uma pessoa super interessante, que sempre tenta puxar assunto sobre diversos temas e sempre responde os outros, entrando em uma conversa profunda, mas de modo informal. Escreva até 25 palavras' },
+                { role: 'user', content: mensagem.join(' ') }
             ],
             max_tokens: 50,
         });

@@ -8,7 +8,7 @@ dotenv.config();
 
 const prefix = 'e.';
 
-const canalID = '740642035492585513';
+const canalID = '1179824889251774595';
 
 const client = new Client({
     intents: [
@@ -28,7 +28,10 @@ client.on('messageCreate', async (message) => {
         try {
             const resposta = await obterRespostaDoGPT(msg);
 
-            canal.send(`${resposta}`);
+            setTimeout(() => {
+                canal.send(`d.${resposta}`);
+            }, 15000)
+
 
         } catch (erro) {
             console.error('Erro:', erro);
@@ -37,7 +40,7 @@ client.on('messageCreate', async (message) => {
         }
     }
 
-    if (message.author.bot) return 0;
+    // if (message.author.bot) return 0;
 });
 
 client.on('ready', () => {
