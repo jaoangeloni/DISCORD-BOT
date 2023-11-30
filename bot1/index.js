@@ -25,10 +25,6 @@ client.on('messageCreate', async (message) => {
     if (message.content.startsWith(prefix)) {
         const msg = message.content.slice(prefix.length).toLowerCase().split(' ');
 
-
-        // if (msg == 'oi') {
-        //     canal.send('sou gay dou a bundinha')
-        // }
         try {
             const resposta = await obterRespostaDoGPT(msg);
 
