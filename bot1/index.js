@@ -30,7 +30,7 @@ client.on('messageCreate', async (message) => {
 
             setTimeout(() => {
                 canal.send(`d.${resposta}`);
-            }, 15000)
+            }, 5000)
 
 
         } catch (erro) {
@@ -39,8 +39,6 @@ client.on('messageCreate', async (message) => {
             canal.send('Ocorreu um erro ao processar a mensagem.');
         }
     }
-
-    // if (message.author.bot) return 0;
 });
 
 client.on('ready', () => {

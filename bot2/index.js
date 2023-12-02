@@ -30,7 +30,7 @@ client.on('messageCreate', async (message) => {
 
             setTimeout(() => {
                 canal.send(`e.${resposta}`);
-            }, 15000)
+            }, 5000)
 
         } catch (erro) {
             console.error('Erro:', erro);
