@@ -29,8 +29,8 @@ client.on('messageCreate', async (message) => {
             const resposta = await obterRespostaDoGPT(msg);
 
             setTimeout(() => {
-                canal.send(`d.${resposta}`);
-            }, 5000)
+                canal.send(`${resposta}`);
+            }, 3000)
 
 
         } catch (erro) {
