@@ -1,2 +1,2 @@
 # DISCORD-BOT
-Testes de bot do Discord integrados com a API do chatGPT
+Testes de bot do Discord.
